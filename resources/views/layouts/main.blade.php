@@ -3,7 +3,6 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width-device-width, initial-scale=1">
-	<title>Sawuta International Uganda Limited</title>
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body class="font-sans bg-gray-900 text-white">
@@ -19,11 +18,11 @@
 				</li>
 				
 				<li class="ml-10">
-					<a href="/about" class="hover-text-gray-300">About Us</a>		
+					<a href="/about" class="hover-text-gray-300">About</a>		
 				</li>
 
 				<li class="ml-10">
-					<a href="/services" class="hover-text-gray-300">Our Services</a>		
+					<a href="/services" class="hover-text-gray-300">Services</a>	
 				</li>
 
 				<li class="ml-10">
@@ -31,11 +30,15 @@
 				</li>
 
 				<li class="ml-10">
-					<a href="/employer" class="hover-text-gray-300">Employers</a>		
+					<a href="/employer" class="hover-text-gray-300">Employers</a>	
 				</li>
 
 				<li class="ml-10">
-					<a href="/" class="hover-text-gray-300">Contact US</a>		
+					<a href="/contact" class="hover-text-gray-300">Contact</a>	
+				</li>
+
+				<li class="ml-10">
+					<a href="/home" class="hover-text-gray-300">Login</a>		
 				</li>
 			</ul>
 			<div class="flex items-center">

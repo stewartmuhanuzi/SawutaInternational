@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-	
-	<title>Employer</title>
-</head>
-<body>
-	<h1>Employer</h1>
+@extends('layouts.main')
 
-</body>
-</html>
+@section('content')
+	<!DOCTYPE html>
+	<html>
+	<head>
+		
+		<title>Are looking for talents</title>
+	</head>
+	<body>
+		<h1>Employer</h1>
+
+	</body>
+	</html>
+@endsection	

@@ -1,6 +1,14 @@
 @extends('layouts.main')
 
 @section('content')
-	<nav>Sawuta</nav>
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Home</title>
+	</head>
+	<body>
+	
+	</body>
+	</html>
 
 @endsection 

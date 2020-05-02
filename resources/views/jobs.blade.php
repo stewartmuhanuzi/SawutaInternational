@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Jobs</title>
-</head>
-<body>
-	<h1>Jobs</h1>
+@extends('layouts.main')
 
-</body>
-</html>
+@section('content')
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Jobs</title>
+	</head>
+	<body>
+		<h1>Jobs</h1>
+
+	</body>
+	</html>
+@endsection	

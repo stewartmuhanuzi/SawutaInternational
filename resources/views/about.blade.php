@@ -1,7 +1,14 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('content')
-
-	<h4>About Us</h4>
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>About Us</title>
+	</head>
+	<body>
+	
+	</body>
+	</html>
 
 @endsection('content')
