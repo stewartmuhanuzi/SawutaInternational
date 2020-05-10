@@ -33,9 +33,8 @@ Route::get('/jobs', function () {
     return view('jobs');
 });
 
-Route::get('/employer', function () {
-    return view('employer');
-});
+Route::get('/postjob', 'PostJobController@create')->name('postjob.create');
+Route::post('/postjob', 'PostJobController@store')->name('postjob.store');
 
 
 
@@ -48,3 +47,4 @@ Route::get('/contact', 'ContactController@create')-> name('contact');
 Route::post('/contact', ['uses' => 'ContactController@store',
 	'as' => 'contact.store'
 ]);	
+

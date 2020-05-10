@@ -4,10 +4,9 @@
 	<!DOCTYPE html>
 	<html>
 	<head>
-		<title>Home</title>
+		<title>Home-Sawuta International</title>
 	</head>
 	<body>
-	
 	</body>
 	</html>
 

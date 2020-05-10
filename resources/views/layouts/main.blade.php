@@ -30,7 +30,7 @@
 				</li>
 
 				<li class="ml-10">
-					<a href="/employer" class="hover-text-gray-300">Employers</a>	
+					<a href="/postjob" class="hover-text-gray-300">Post Job</a>	
 				</li>
 
 				<li class="ml-10">
