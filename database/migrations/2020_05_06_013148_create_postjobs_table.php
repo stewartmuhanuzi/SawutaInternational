@@ -15,6 +15,7 @@ class CreatePostjobsTable extends Migration
     {
         Schema::create('postjobs', function (Blueprint $table) {
             $table->increments('id');
+            //$table->unsignedBigInteger('user_id');
             $table->string('company');
             $table->string('title');
             $table->text('description');
@@ -22,6 +23,14 @@ class CreatePostjobsTable extends Migration
             $table->date('deadline');
             $table->string('document');
             $table->timestamps();
+
+            /*
+            Foreign key constraint with SQL- 
+            */
+            // $table->foreign('user_id')
+            //     ->references('id')
+            //     ->on('users')
+            //     ->onDelete('cascade'); 
         });
     }
 

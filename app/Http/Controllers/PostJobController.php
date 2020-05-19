@@ -8,43 +8,43 @@ class PostJobController extends Controller
 {
     public function __construct()
     {
+        //This only authorizes a logged in user 
+
         $this->middleware('auth');
     }
 
     public function create()
     {
-    	return view('postjob'); 
+    	return view('postjob.create'); 
 
     }
 
-    public function store(Request $request)
+    public function store()
     {
-    	$this->validate($request, [
-    		'company' => 'required',
-    		'title' => 'required',
-    		'description' => 'required',
-    		'salary' => 'required',
-    		'deadline' => 'required',
-            'document'
-    	]);
+        //After submission of the job post the details are captured and stored in the database with this method
 
-        $filenameWithExtension = $request->file('document')->getClientOriginalName();
-        $filename = pathinfo($filenameWithExtension, PATHINFO_FILENAME);
-        $extension = $request->file('document')->getClientOriginalExtension();
-        $filenameToStore = $filename . '_' .time() .'.'.$extension;
+        Postjob::create($this->validatePostData());
 
-        $request->file('document')->storeAs('public/document_files', $filenameToStore);
+        //return redirect('/postjob/test');
+    }
 
-        $postjob = new Postjob();
-        $postjob->company =$request->input('company');
-        $postjob->title =$request->input('title');
-        $postjob->description =$request->input('description');
-        $postjob->salary =$request->input('salary');
-        $postjob->deadline =$request->input('deadline');
-        $postjob->company =$request->input('document');
-        $postjob->save();
+    public function displayPost()
+    {
+        $postjob = Postjob::all();
 
+        return view('postjob.show', ['postjob' => $postjob]);
+    }
 
+    protected function validatePostData()
+    {
+        return request()->validate([
+            'company' => 'required',
+            'title' => 'required',
+            'description' => 'required',
+            'salary' => 'required',
+            'deadline' =>'required',
+            'document' =>'required'
 
+        ]);
     }
 }

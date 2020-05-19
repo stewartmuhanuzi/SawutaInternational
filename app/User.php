@@ -29,11 +29,23 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be cast to native types.
+     * The attributes that should be cast to native types
      *
      * @var array
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function postjobs()
+    {
+        // a user can post many jobs
+        return $this->hasMany(Postjob::class);
+    }
+
+    public function jobs()
+    {
+        // a user can view, apply for many jobs
+        return $this->hasMany(Jobs::class);
+    }
 }

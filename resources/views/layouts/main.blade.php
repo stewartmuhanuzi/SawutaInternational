@@ -26,11 +26,11 @@
 				</li>
 
 				<li class="ml-10">
-					<a href="/jobs" class="hover-text-gray-300">Jobs</a>		
+					<a href="/postjob/show" class="hover-text-gray-300">Jobs</a>		
 				</li>
 
 				<li class="ml-10">
-					<a href="/postjob" class="hover-text-gray-300">Post Job</a>	
+					<a href="/postjob/create" class="hover-text-gray-300">Post Job</a>	
 				</li>
 
 				<li class="ml-10">

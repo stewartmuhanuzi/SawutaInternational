@@ -16,7 +16,7 @@
 	</head>
 	<body>
 		<div class="container">
-				<h1>Post A Job</h1>
+				<h1>Post New Job</h1>
 				<div class="col-md-6">
 					@if(Session::has('flash_message'))
 						<div class="alert alert-success">{{ Session::get('flash_message')}}</div>
@@ -65,14 +65,10 @@
 						</div>
 
 						<div class="form-group">
-							<label for="files">Additional Documents</label>
-							<input type="file" class="form-control" id="document" name="document">	
+							<label for="files" class="col-md-4 col-form-label">Documents</label>
+							<input type="file" class="form-control-file" id="document" name="document">	
 						</div>
 						<button class="btn btn-primary py-2 px-4">Submit</button>
-
-
-
-
 					</form>
 			</div>		
 		</div>	

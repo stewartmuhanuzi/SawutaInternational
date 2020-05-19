@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Mail;
 use Illuminate\Http\Request;
-
+use App\Contact;
 
 class ContactController extends Controller
 {
@@ -13,23 +13,29 @@ class ContactController extends Controller
 
     }
 
-    public function store(Request $request)
+    public function store()
     {
-    	$this->validate($request, [
-    		'name' =>'required',
-    		'email'=> 'required|email',
-    		'subject'=> 'required',
-    		'message' =>'required'
-    	]);
+    	Contact::create($this->validateContactData());
 
-    	Mail::send('emails.contact-message', [
-    		'msg' => $request->message
-    	], function ($mail) use($request){
-    		$mail->from($request->email, $request->name);
-    		$mail->to('muhanuzistewart@gmail.com')->subject('Contact Message');
-    	});
+    	// Mail::send('emails.contact-message', [
+    	// 	'msg' => $request->message
+    	// ], function ($mail) use($request){
+    	// 	$mail->from($request->email, $request->name);
+    	// 	$mail->to('muhanuzistewart@gmail.com')->subject('Contact Message');
+    	// });
 
     	return redirect('/contact')->with('flash_mesaage', 'Thank You for your message.');
 
     }
+
+    public function validateContactData()
+    {
+        return request()->validate([
+            'name' =>'required',
+            'email'=> 'required|email',
+            'subject'=> 'required',
+            'message' =>'required'
+        ]);
+    }
 }
+

@@ -13,11 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
 
-Route::get('/', function () {
+Route::get('/', function () { 
     return view('startPage');
 });
 
@@ -29,12 +26,11 @@ Route::get('/services', function () {
     return view('services');
 });
 
-Route::get('/jobs', function () {
-    return view('jobs');
-});
+Route::get('/postjob/show', 'JobsController@index')->name('postjob.show');
 
-Route::get('/postjob', 'PostJobController@create')->name('postjob.create');
-Route::post('/postjob', 'PostJobController@store')->name('postjob.store');
+Route::get('/postjob/create', 'PostJobController@create')->name('postjob.create');
+Route::get('/postjob/show', 'PostJobController@displayPost');
+Route::post('/postjob/store', 'PostJobController@store')->name('postjob.store');
 
 
 
@@ -42,9 +38,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
 Route::get('/contact', 'ContactController@create')-> name('contact');
 
-Route::post('/contact', ['uses' => 'ContactController@store',
-	'as' => 'contact.store'
-]);	
+Route::post('/contact', 'ContactController@store')->name('contact.store');	
 
