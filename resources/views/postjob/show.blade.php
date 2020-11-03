@@ -1,5 +1,4 @@
 @extends('layouts.main')
-
 @section('content')
 	<!DOCTYPE html>
 	<html>
@@ -7,19 +6,31 @@
 		<title>Available Jobs</title>
 	</head>
 	<body>
+		
 		<div id="content">
-			<h1>Jobs Available</h1>
-			<--Loop through all jobs from the database-->
+			<h3 class="uppercase tracking-wider text-orange text-lg font-semibold ">Jobs Available</h3>
+			<hr> 
 			@if(count($postjob) > 0)
+
 				@foreach($postjob as $post)
-				<ul class="list-group">
-					<li class="list-group-item">Company Name: {{ $post->company}}</li>
-					<li class="list-group-item">Job Title: {{ $post->title}}</li>
-					<li class="list-group-item">Job description: {{ $post->description}}</li>
-					<li class="list-group-item">Salary: {{ $post->salary}}</li>
-					<li class="list-group-item">Application Deadline: {{ $post->deadline}}</li>
-					<li class="list-group-item">Documents: {{ $post->document}}</li>
-				</ul>	
+					<article>
+						<div class="Job Title"> Job Title:
+							<a href="/postjob/{{$post->id}}">{{$post->title}}</a>		
+						
+						</div>
+ 						<h4>Company Name: {{ $post->company}}</h4>
+						<div class="Job description">Job descritpion: {{$post->description}}</div>
+						
+
+						{{-- <div class="Salary">Salary: {{$post->salary}}</div>
+						<div class="Application Deadline">Application Deadline: {{$post->deadline}}</div>
+						<div class="Documents">Documents: {{$post->document}}</div> --}}
+						{{-- <div class="btn-group">
+						<a href="{{ route('album-show', $album->id )}}" class="btn btn-sm btn-outline-secondary">View Job</a>
+						</div --}}
+
+					</article>
+			<hr>
 				@endforeach
 			@endif
 		</div>

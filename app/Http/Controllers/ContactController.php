@@ -24,7 +24,7 @@ class ContactController extends Controller
     	// 	$mail->to('muhanuzistewart@gmail.com')->subject('Contact Message');
     	// });
 
-    	return redirect('/contact')->with('flash_mesaage', 'Thank You for your message.');
+    	return redirect('/')->with('success', 'Thank You for your message.');
 
     }
 

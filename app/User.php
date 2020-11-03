@@ -8,6 +8,8 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    public $timestamps = false;
+    
     use Notifiable;
 
     /**
@@ -45,7 +47,12 @@ class User extends Authenticatable
 
     public function jobs()
     {
-        // a user can view, apply for many jobs
+        // a user can view, apply to many jobs
         return $this->hasMany(Jobs::class);
+    }    
+
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
     }
 }

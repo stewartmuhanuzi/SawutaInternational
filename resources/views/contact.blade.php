@@ -17,6 +17,9 @@
 		</style>
 	</head>
 	<body>
+
+		{{-- @extends('includes.messages') --}}
+
 		<div class="container">
 			<h1>Contact Us</h1>
 

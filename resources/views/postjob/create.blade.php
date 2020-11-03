@@ -25,7 +25,7 @@
 						{{csrf_field() }}
 						<div class="form-group">
 							<label>Company Name</label>
-							<input name="company" cols="5" rows="5" class="form-control" placeholder="Company Name"></input>
+							<input name="company" cols="5" rows="5" class="form-control" placeholder="Company Name" value="{{old('company')}}"></input>
 							@if($errors->has('company'))
 								<small class="form-text invalid-feedback">{{ $errors->first('company')}} </small>
 							@endif
@@ -33,14 +33,14 @@
 
 						<div class="form-group">
 							<label>Job Title</label>
-							<input type="text" name="title" value="" class="form-control" placeholder="Job Title">@if($errors->has('title'))
+							<input type="text" name="title" value="{{old('title')}}" class="form-control" placeholder="Job Title">@if($errors->has('title'))
 								<small class="form-text invalid-feedback">{{ $errors->first('title')}} </small>
 							@endif
 						</div>
 
 						<div class="form-group">
 							<label>Job Description</label>
-							<textarea name="description" cols="30" rows="7" class="form-control" placeholder="Job Descriptions"></textarea>
+							<textarea name="description" cols="30" rows="7" class="form-control" placeholder="Job Descriptions">{{old('description')}}</textarea>
 							@if($errors->has('description'))
 								<small class="form-text invalid-feedback">{{ $errors->first('description')}} </small>
 							@endif
@@ -55,8 +55,8 @@
 						</div>
 
 						<div class="form-group">
-							<label>Deadline for AppDlication</label>
-							<input type="text" name="deadline" value="" class="form-control" placeholder="">
+							<label>Deadline for Application</label>
+							<input type="text" name="deadline" value="" class="form-control" placeholder="Due Date">
 							@if($errors->has('deadline'))
 								<small class="form-text invalid-feedback">{{ $errors->first('deadline')}} </small>
 							@endif
@@ -68,6 +68,7 @@
 							<label for="files" class="col-md-4 col-form-label">Documents</label>
 							<input type="file" class="form-control-file" id="document" name="document">	
 						</div>
+
 						<button class="btn btn-primary py-2 px-4">Submit</button>
 					</form>
 			</div>		
